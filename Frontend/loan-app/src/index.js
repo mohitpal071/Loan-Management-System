@@ -7,14 +7,17 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./components/Home/HomePage";
 import LoginPage from "./components/Authentication/LoginPage";
 import AdminLogin from "./components/Admin/Login/AdminLogin.jsx";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
         <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </Router>
