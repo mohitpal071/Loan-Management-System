@@ -1,24 +1,33 @@
 import React from 'react'
+import './css/LoginPage.css'
+import { useHistory } from 'react-router-dom'
+
+//function to send data to backend
+const handleSubmit = (event) => {
+  event.preventDefault()
+  const data = new FormData(event.target)
+  fetch('/api/login', {
+    method: 'POST',
+    body: data,
+  })
+}
+
 
 const LoginPage = () => {
   return (
+    <div class="container">
     <div>
-        <div className="container">
-                    <h1>Login</h1>
-                    <form>
-                        <div className="form-group">
-                            <div className='row'>
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className="form-control" id="username" placeholder="Enter username" />
-                            </div>
-                            <div className='row'>
-                            <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" id="password" placeholder="Enter password" />
-                            </div>
-                            <button type="submit" className="btn btn-primary">Login</button>
-                        </div>
-                    </form>
-        </div>
+      <div class="form-header">
+        <h1>Loan Management</h1>
+      </div>
+      <form class="form-container" id="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required/>
+        <button type="submit" onSubmit={handleSubmit}>Login</button>
+      </form>
+    </div>
     </div>
   )
 }
