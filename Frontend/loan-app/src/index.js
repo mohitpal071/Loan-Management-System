@@ -1,19 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/Home/HomePage';
-import LoginPage from './components/Authentication/LoginPage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+// import App from './App';
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/Home/HomePage";
+import LoginPage from "./components/Authentication/LoginPage";
+import AdminLogin from "./components/Admin/Login/AdminLogin.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<LoginPage/>} />
-        <Route path="/home" element={<HomePage/>} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </Router>
   </React.StrictMode>

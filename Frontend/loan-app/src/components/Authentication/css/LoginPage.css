@@ -5,7 +5,7 @@
     background-color: #303030;
   }
 
-  .container {
+  .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
-  h1 {
+  .form-header h1 {
     text-align: center;
     
     font-family: Noto Sans Vithkuqi, sans-serif;

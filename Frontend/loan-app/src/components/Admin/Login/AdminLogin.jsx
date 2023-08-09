@@ -1,5 +1,4 @@
 import React from "react";
-import "./css/LoginPage.css";
 
 //function to send data to backend
 const handleSubmit = (event) => {
@@ -16,7 +15,7 @@ const LoginPage = () => {
     <div class="login-container">
       <div>
         <div class="form-header">
-          <h1>User Login</h1>
+          <h1>Admin Login</h1>
         </div>
         <form class="form-container" id="login-form">
           <label for="username">Username</label>
