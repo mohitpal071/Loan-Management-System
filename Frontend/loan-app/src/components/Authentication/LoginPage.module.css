@@ -1,11 +1,24 @@
-.container{
+.loginPage{
     
     display: flex;
     width: 100%;
     height: 100vh;
     align-items: center;
     justify-content: center;
+    /* background image with tint*/
+    background-image: url("./bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    
 }
+
+.background-tint {
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+  }
 
 .formContainer {
   display: flex;
@@ -41,14 +54,22 @@
     border-radius: 5px;
 }
 
-.formFields{
-    text-align: left;
+.form{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width: 100%;
+}
 
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    text-align: left;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
