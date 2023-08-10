@@ -8,6 +8,7 @@ import HomePage from "./components/Home/HomePage";
 import LoginPage from "./components/Authentication/LoginPage";
 import AdminLogin from "./components/Admin/Login/AdminLogin.jsx";
 import Dashboard from "./components/Dashboard/Dashboard";
+import ApplyLoan from "./components/User/ApplyLoan";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,7 @@ root.render(
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-
+        <Route path="/applyloan" element={<ApplyLoan />} />
         <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
     </Router>
