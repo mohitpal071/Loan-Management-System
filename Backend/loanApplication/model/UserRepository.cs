@@ -14,6 +14,8 @@ namespace loanApplication.model
         private readonly List<User> users = new List<User>()
         {
             new User(){username="abc_1",password="4334dfsdf"},
+            new User(){username="a",password="4"},
+
             new User(){username="xyz",password="23sdg4dfsdf"},
 
         };
@@ -63,13 +65,24 @@ namespace loanApplication.model
         }
         public bool ValidateUser(User user)
         {
-            foreach(var u in users)
+            
+
+            try
             {
-                if(u.username == user.username && u.password== user.password) { 
-                   return true;
+                foreach (var u in users)
+                {
+                    if (u.username == user.username && u.password == user.password)
+                    {
+                        return true;
+                    }
                 }
+                return false;
             }
-            return false;
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         public List<User> GetUsers()
         {
