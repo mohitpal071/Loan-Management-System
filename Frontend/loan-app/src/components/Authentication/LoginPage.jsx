@@ -1,20 +1,34 @@
 import React from "react";
 import styles from "./LoginPage.module.css";
 import { Form, Button } from "react-bootstrap";
-
-//function to send data to backend
-const handleSubmit = () => {
-  // event.preventDefault();
-  window.location.href = "/dashboard";
-  
-  // const data = new FormData(event.target);
-  // fetch("/api/login", {
-  //   method: "POST",
-  //   body: data,
-  // });
-};
+import { useState } from "react"
 
 const LoginPage = () => {
+  const [form, setForm] = useState({
+    username: "",
+    password: ""
+  });
+
+  const handleChange = (event) => {
+    console.log(event.target.id);
+    setForm({
+      ...form,
+      [event.target.id]: event.target.value,
+    });
+  } 
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if(form.username === "admin" && form.password === "admin") {
+      window.location.href = "/admin/dashboard";
+    } else {
+      window.location.href = "/dashboard";
+    }
+    
+  }
+
   return (
     <div className={styles.loginPage}>
       <div className={styles.formContainer}>
@@ -27,17 +41,18 @@ const LoginPage = () => {
           <div className={styles.form}>
           <h1>Welcome!</h1>
           <form>
-          <Form className={styles.formGroup}>
-            <Form.Group controlId="formBasicUsername">
+          <Form className={styles.formGroup} >
+            <Form.Group controlId="username">
               <Form.Label>Username:</Form.Label>
-              <Form.Control autocomplete="off" type="text" placeholder="Enter username" name="username" />
+              <Form.Control value={form.username} onChange={handleChange} autocomplete="off" type="text" placeholder="Enter username" name="username" />
             </Form.Group>
-            <Form.Group controlId="formBasicPassword">
+            <Form.Group controlId="password">
               <Form.Label>Password:</Form.Label>
-              <Form.Control autocomplete="off" type="text" placeholder="Enter password" name="password" />
+              <Form.Control value={form.password} onChange={handleChange} autocomplete="off" type="password" placeholder="Enter password" name="password" />
             </Form.Group>
+            <br />
             <div className={styles.buttonContainer}>
-              <Button variant="danger" type="submit">
+              <Button variant="danger" type="submit" onClick={handleSubmit}>
                 Login
               </Button>
             </div>

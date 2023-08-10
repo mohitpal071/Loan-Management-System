@@ -9,6 +9,8 @@ import LoginPage from "./components/Authentication/LoginPage";
 import AdminLogin from "./components/Admin/Login/AdminLogin.jsx";
 import Dashboard from "./components/Dashboard/Dashboard";
 import ApplyLoan from "./components/User/ApplyLoan";
+import AdminDashboard from "./components/Admin/Dashboard/AdminDashboard";
+import AddUser from "./components/Admin/AddUser/AddUser";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,7 +21,12 @@ root.render(
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/applyloan" element={<ApplyLoan />} />
+
+
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="admin/adduser" element={<AddUser />} />
       </Routes>
     </Router>
   </React.StrictMode>
