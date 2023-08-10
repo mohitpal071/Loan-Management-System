@@ -1,5 +1,7 @@
 import React from "react";
-import "./Dashboard.css";
+import NavBar from "../NavBar/NavBar";
+import styles from "./Dashboard.module.css";
+
 //function to send data to backend
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -12,26 +14,36 @@ const handleSubmit = (event) => {
 
 const Dashboard = () => {
   return (
-    <div class="login-container">
-      <div>
-        <div class="form-header">
-          <h1>User Dashboard</h1>
+    <div>
+      <NavBar />
+    <div className={styles.dashboard}>
+      <a href="/viewloans"className={styles.card}>
+      <div >
+        <div className={styles.icon}>
+          <img src="./assets/viewloans.png" width={100}/>
         </div>
-        <div class="form-container">
-          <button type="submit" onSubmit={handleSubmit}>
-            View Loans
-          </button>
-
-          <button type="submit" onSubmit={handleSubmit}>
-            Apply for Loan
-          </button>
-
-          <button type="submit" onSubmit={handleSubmit}>
-            View Items Purchased
-          </button>
-        </div>
+        <h3>View Loans</h3>
       </div>
+      </a>
+      <a href="/applyloan" className={styles.card}>
+      <div >
+      <div className={styles.icon}>
+          <img src="./assets/applyloan.png" width={100}/>
+        </div>
+      <h3>Apply for loan</h3>
+      </div>
+      </a>
+      <a href="/viewitems" className={styles.card}>
+      <div >
+      <div className={styles.icon}>
+          <img src="./assets/viewitems.png" width={100}/>
+        </div>
+      <h3>View Purchased</h3>
+      </div>
+      </a>
     </div>
+    </div>
+    
   );
 };
 

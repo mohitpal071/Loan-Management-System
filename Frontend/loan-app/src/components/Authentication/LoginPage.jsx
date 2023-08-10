@@ -3,13 +3,15 @@ import styles from "./LoginPage.module.css";
 import { Form, Button } from "react-bootstrap";
 
 //function to send data to backend
-const handleSubmit = (event) => {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  fetch("/api/login", {
-    method: "POST",
-    body: data,
-  });
+const handleSubmit = () => {
+  // event.preventDefault();
+  window.location.href = "/dashboard";
+  
+  // const data = new FormData(event.target);
+  // fetch("/api/login", {
+  //   method: "POST",
+  //   body: data,
+  // });
 };
 
 const LoginPage = () => {
@@ -24,14 +26,15 @@ const LoginPage = () => {
         <div className={styles.rightHalf}>
           <div className={styles.form}>
           <h1>Welcome!</h1>
-          <Form className={styles.formGroup} onSubmit={handleSubmit}>
+          <form>
+          <Form className={styles.formGroup}>
             <Form.Group controlId="formBasicUsername">
-              <Form.Label>Username</Form.Label>
-              <Form.Control type="text" placeholder="Enter username" name="username" />
+              <Form.Label>Username:</Form.Label>
+              <Form.Control autocomplete="off" type="text" placeholder="Enter username" name="username" />
             </Form.Group>
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="text" placeholder="Enter password" name="password" />
+              <Form.Label>Password:</Form.Label>
+              <Form.Control autocomplete="off" type="text" placeholder="Enter password" name="password" />
             </Form.Group>
             <div className={styles.buttonContainer}>
               <Button variant="danger" type="submit">
@@ -39,6 +42,8 @@ const LoginPage = () => {
               </Button>
             </div>
           </Form>
+          </form>
+          
           </div>
         </div>
     </div>
