@@ -1,5 +1,6 @@
 import React from "react";
-import "./css/LoginPage.css";
+import styles from "./LoginPage.module.css";
+import { Form, Button } from "react-bootstrap";
 
 //function to send data to backend
 const handleSubmit = (event) => {
@@ -13,21 +14,34 @@ const handleSubmit = (event) => {
 
 const LoginPage = () => {
   return (
-    <div class="login-container">
-      <div>
-        <div class="form-header">
-          <h1>User Login</h1>
+    <div className={styles.loginPage}>
+      <div className={styles.formContainer}>
+        <div className={styles.leftHalf}>
+          <div className={styles.logo}>
+            <img src="./assets/wells.png" width={300}/>
+          </div>
         </div>
-        <form class="form-container" id="login-form">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required />
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-          <button type="submit" onSubmit={handleSubmit}>
-            Login
-          </button>
-        </form>
-      </div>
+        <div className={styles.rightHalf}>
+          <div className={styles.form}>
+          <h1>Welcome!</h1>
+          <Form className={styles.formGroup} onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="Enter username" name="username" />
+            </Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="text" placeholder="Enter password" name="password" />
+            </Form.Group>
+            <div className={styles.buttonContainer}>
+              <Button variant="danger" type="submit">
+                Login
+              </Button>
+            </div>
+          </Form>
+          </div>
+        </div>
+    </div>
     </div>
   );
 };

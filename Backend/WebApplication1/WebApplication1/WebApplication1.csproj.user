@@ -10,6 +10,9 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>WebApplication1.Model.APIDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+<<<<<<< HEAD
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+=======
+>>>>>>> a3a5fe057f37de65bd8d91d60dfe81297c5fe762
   </PropertyGroup>
 </Project>

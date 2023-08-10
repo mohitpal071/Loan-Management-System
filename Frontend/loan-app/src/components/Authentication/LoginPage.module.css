@@ -1,0 +1,75 @@
+.loginPage{
+    
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /* background image with tint*/
+    background-image: url("./bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.background-tint {
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+  }
+
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+.logo{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftHalf{
+    background-color: #b31e30;
+    flex: 1;
+    padding: 1rem;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.rightHalf{
+    background-color: white;
+    flex: 1;
+    padding: 1rem;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    text-align: left;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
