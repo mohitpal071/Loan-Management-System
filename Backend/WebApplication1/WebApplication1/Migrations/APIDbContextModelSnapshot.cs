@@ -22,6 +22,24 @@ namespace WebApplication1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WebApplication1.Model.Admin", b =>
+                {
+                    b.Property<string>("AdminId")
+                        .HasColumnType("varchar(6)");
+
+                    b.Property<string>("AdminName")
+                        .IsRequired()
+                        .HasColumnType("varchar(250)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
+
+                    b.HasKey("AdminId");
+
+                    b.ToTable("Admin");
+                });
+
             modelBuilder.Entity("WebApplication1.Model.Employee", b =>
                 {
                     b.Property<string>("employee_id")
