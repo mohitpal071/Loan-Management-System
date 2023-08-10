@@ -1,6 +1,7 @@
-using loanApplication.model;
+using Microsoft.EntityFrameworkCore;
+using WebApplication1.Model;
 
-namespace loanApplication
+namespace WebApplication1
 {
     public class Program
     {
@@ -9,11 +10,16 @@ namespace loanApplication
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddSingleton<UserRepository>();
+
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+            //Dependency Injection DbContext Class
+            builder.Services.AddDbContext<APIDbContext>(options =>
+            options.UseSqlServer(@"server=WINDOWS-BVQNF6J;database=loan;trusted_connection=true;TrustServerCertificate=True;"));
 
             var app = builder.Build();
 
@@ -23,6 +29,8 @@ namespace loanApplication
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
