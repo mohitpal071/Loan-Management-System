@@ -1,31 +1,17 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD:Backend1/WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.dgspec.json
-    "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\mohit\\.nuget\\packages\\",
-        "outputPath": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\obj\\",
-=======
-    "C:\\Users\\Administrator\\Documents\\GitHub\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\Administrator\\Documents\\GitHub\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Documents\\GitHub\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-        "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\obj\\",
->>>>>>> b2ba850f458e1382e697422fff8eaa0835056a7f:Backend/WebApplication1/WebApplication1/obj/WebApplication1.csproj.nuget.dgspec.json
+        "outputPath": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mohit\\AppData\\Roaming\\NuGet\\NuGet.Config",

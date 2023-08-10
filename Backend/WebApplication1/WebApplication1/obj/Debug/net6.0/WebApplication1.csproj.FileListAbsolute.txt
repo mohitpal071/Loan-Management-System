@@ -85,3 +85,13 @@ E:\Wells-Project\Loan-Management-System\Backend1\WebApplication1\WebApplication1
 E:\Wells-Project\Loan-Management-System\Backend1\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 E:\Wells-Project\Loan-Management-System\Backend1\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 E:\Wells-Project\Loan-Management-System\Backend1\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.AssemblyReference.cache
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfoInputs.cache
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.AssemblyInfo.cs
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.CoreCompileInputs.cache
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cs
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.MvcApplicationPartsAssemblyInfo.cache
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.dll
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\refint\WebApplication1.dll
+E:\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb

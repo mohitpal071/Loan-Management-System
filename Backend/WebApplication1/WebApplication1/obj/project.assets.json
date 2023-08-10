@@ -3941,11 +3941,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\mohit\\.nuget\\packages\\",
-      "outputPath": "E:\\Wells-Project\\Loan-Management-System\\Backend1\\WebApplication1\\WebApplication1\\obj\\",
+      "outputPath": "E:\\Loan-Management-System\\Backend\\WebApplication1\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mohit\\AppData\\Roaming\\NuGet\\NuGet.Config",
