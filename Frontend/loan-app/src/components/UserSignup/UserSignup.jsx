@@ -17,13 +17,8 @@ const UserSignup = () => {
   const gender = ['M', 'F', 'Other'];
 
   const handleDobChange = (date) => {
-<<<<<<< HEAD
     console.log(date.toDateString());
     setdobDate(date);
-=======
-    console.log(date.target.value);
-    setdobDate(date.target.value);
->>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
   };
 
   const handleDojChange = (date) => {
@@ -36,14 +31,7 @@ const UserSignup = () => {
     employee_id: "",
     employee_name: "",
     designation: "",
-<<<<<<< HEAD
     department: "",
-=======
-    dob: "",
-    doj: "",
-    password: "",
-    cpassword: "",
->>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
     gender: "",
     date_of_birth: "",
     date_of_joining: ""
@@ -87,23 +75,10 @@ const UserSignup = () => {
     form.department = dept[parseInt(form.department)];
     form.designation = designation[parseInt(form.designation)];
     form.gender = gender[parseInt(form.gender)];
-<<<<<<< HEAD
     form.date_of_birth = dobDate.toLocaleDateString('en-GB');
     form.date_of_joining = dojDate.toLocaleDateString('en-GB');
 
     signup(form)
-=======
-    form.dob = formatDate(new Date(dobDate));
-    form.doj = formatDate(new Date(dojDate));
-    form.password = form.password.toString();
-    form.cpassword = form.cpassword.toString();
-
-    if(form.password !== form.cpassword) {
-      alert("Passwords do not match");
-      return;
-    }
-
->>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
     console.log(form);
   }
 
