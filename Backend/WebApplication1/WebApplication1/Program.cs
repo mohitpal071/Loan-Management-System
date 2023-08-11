@@ -1,5 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using WebApplication1.Model;
+global using Microsoft.EntityFrameworkCore;
+global using WebApplication1.Model;
+
 
 namespace WebApplication1
 {
@@ -15,7 +16,7 @@ namespace WebApplication1
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            ;
 
             //Dependency Injection DbContext Class
             builder.Services.AddDbContext<APIDbContext>(options =>
