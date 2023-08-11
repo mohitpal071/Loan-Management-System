@@ -67,9 +67,6 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
 }
 
 .bottomGroup{

@@ -66,10 +66,8 @@
     padding: 1rem;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
     height: 100%;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
 }
 
 .bottomGroup{
@@ -90,6 +88,6 @@ select::slotted(option){
     background-color: white;
 }
 
-.react-datepicker__input-container input{
-    width: 10px;
+.react-datepicker__input-container{
+    width: 10%;
 }

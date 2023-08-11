@@ -7,7 +7,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 
-const AddUser = () => {
+const UserSignup = () => {
   const [dobDate, setdobDate] = useState(new Date());
   const [dojDate, setdojDate] = useState(new Date());
 
@@ -16,13 +16,13 @@ const AddUser = () => {
   const gender = ['Male', 'Female', 'Other'];
 
   const handleDobChange = (date) => {
-    console.log(date);
-    setdobDate(date);
+    console.log(date.target.value);
+    setdobDate(date.target.value);
   };
 
   const handleDojChange = (date) => {
-    console.log(date);
-    setdojDate(date);
+    console.log(date.target.value);
+    setdojDate(date.target.value);
   };
 
   const [form, setForm] = useState({
@@ -41,6 +41,8 @@ const AddUser = () => {
       ...form,
       [event.target.id]: event.target.value,
     });
+
+    console.log(form)
   }
 
   const handleDropdownChange = (event) => {
@@ -51,13 +53,26 @@ const AddUser = () => {
     });
   }
 
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+  }
+
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join('/');
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     form.dept = dept[parseInt(form.dept)];
     form.designation = designation[parseInt(form.designation)];
     form.gender = gender[parseInt(form.gender)];
-    form.dob = dobDate.toLocaleDateString('en-GB');
-    form.doj = dojDate.toLocaleDateString('en-GB');
+    form.dob = formatDate(new Date(dobDate));
+    form.doj = formatDate(new Date(dojDate));
+
     console.log(form);
   }
 
@@ -103,7 +118,7 @@ const AddUser = () => {
                   <option value="1">Technology</option>
                   <option value="2">Sales</option>
                 </select>
-              </Form.Group>              
+              </Form.Group>          
             </div>
 
             <div className={styles.group2}>
@@ -119,12 +134,12 @@ const AddUser = () => {
               <br />
               <Form.Group controlId="dob" className={styles.dropdown}>
                 <Form.Label>Date of Birth:</Form.Label>
-                <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dobDate} onChange={handleDobChange} />
+                <Form.Control type="date" value={dobDate} onChange={handleDobChange} />
               </Form.Group>
               <br />
               <Form.Group controlId="doj" className={styles.dropdown}>
                 <Form.Label>Date of Joining:</Form.Label>
-                <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dojDate} onChange={handleDojChange} />
+                <Form.Control dateFormat="dd-MM-yyyy" type="date" value={dojDate} onChange={handleDojChange} />
               </Form.Group>
             </div>
           </Form>
@@ -134,9 +149,9 @@ const AddUser = () => {
                 <Form.Label>Gender:</Form.Label>
                 <select id="gender" aria-label="Gender" value={form.gender} onChange={handleDropdownChange}>
                   <option>Select Gender</option>
-                  <option value="1">Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">IDk</option>
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                  <option value="2">IDk</option>
                 </select>
               </Form.Group>
           </div>
@@ -149,4 +164,4 @@ const AddUser = () => {
   )
 }
 
-export default AddUser
+export default UserSignup

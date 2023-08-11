@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './AddUser.module.css'
+import styles from './UserSignup.module.css'
 import AdminNavBar from '../Admin/AdminNavBar/AdminNavBar'
 import { Form, Button } from 'react-bootstrap'
 import { useState } from 'react';
@@ -17,13 +17,18 @@ const UserSignup = () => {
   const gender = ['M', 'F', 'Other'];
 
   const handleDobChange = (date) => {
+<<<<<<< HEAD
     console.log(date.toDateString());
     setdobDate(date);
+=======
+    console.log(date.target.value);
+    setdobDate(date.target.value);
+>>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
   };
 
   const handleDojChange = (date) => {
-    console.log(date);
-    setdojDate(date);
+    console.log(date.target.value);
+    setdojDate(date.target.value);
   };
 
   const [form, setForm] = useState({
@@ -31,7 +36,14 @@ const UserSignup = () => {
     employee_id: "",
     employee_name: "",
     designation: "",
+<<<<<<< HEAD
     department: "",
+=======
+    dob: "",
+    doj: "",
+    password: "",
+    cpassword: "",
+>>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
     gender: "",
     date_of_birth: "",
     date_of_joining: ""
@@ -58,15 +70,40 @@ const UserSignup = () => {
     });
   }
 
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+  }
+
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join('/');
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     form.department = dept[parseInt(form.department)];
     form.designation = designation[parseInt(form.designation)];
     form.gender = gender[parseInt(form.gender)];
+<<<<<<< HEAD
     form.date_of_birth = dobDate.toLocaleDateString('en-GB');
     form.date_of_joining = dojDate.toLocaleDateString('en-GB');
 
     signup(form)
+=======
+    form.dob = formatDate(new Date(dobDate));
+    form.doj = formatDate(new Date(dojDate));
+    form.password = form.password.toString();
+    form.cpassword = form.cpassword.toString();
+
+    if(form.password !== form.cpassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+>>>>>>> a73c524664fed5f3900f537895c0b73f606c70e0
     console.log(form);
   }
 
@@ -76,7 +113,7 @@ const UserSignup = () => {
       <div className={styles.addUser}>
         <form className={styles.formContainer}>
         <div className={styles.formHeader}>
-            <h2>Add Customer Data</h2>
+            <h2>Register</h2>
         </div>
           <Form className={styles.formGroup}>
             <div className={styles.group1}>
@@ -112,7 +149,19 @@ const UserSignup = () => {
                   <option value="1">Technology</option>
                   <option value="2">Sales</option>
                 </select>
-              </Form.Group>              
+              </Form.Group> 
+              <br />  
+              <Form.Group controlId="password">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control
+                  autocomplete="off"
+                  type="password"
+                  placeholder="Password"
+                  name="Password:"
+                  value={form.password}
+                  onChange={handleChange}
+                />
+              </Form.Group>          
             </div>
 
             <div className={styles.group2}>
@@ -128,12 +177,24 @@ const UserSignup = () => {
               <br />
               <Form.Group controlId="date_of_birth" className={styles.dropdown}>
                 <Form.Label>Date of Birth:</Form.Label>
-                <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dobDate} onChange={handleDobChange} />
+                <Form.Control type="date" value={dobDate} onChange={handleDobChange} />
               </Form.Group>
               <br />
               <Form.Group controlId="date_of_joining" className={styles.dropdown}>
                 <Form.Label>Date of Joining:</Form.Label>
-                <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dojDate} onChange={handleDojChange} />
+                <Form.Control dateFormat="dd-MM-yyyy" type="date" value={dojDate} onChange={handleDojChange} />
+              </Form.Group>
+              <br />
+              <Form.Group controlId="cpassword">
+                <Form.Label>Password:</Form.Label>
+                <Form.Control
+                  autocomplete="off"
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="Confirm Password:"
+                  value={form.cpassword}
+                  onChange={handleChange}
+                />
               </Form.Group>
             </div>
           </Form>
@@ -143,14 +204,14 @@ const UserSignup = () => {
                 <Form.Label>Gender:</Form.Label>
                 <select id="gender" aria-label="Gender" value={form.gender} onChange={handleDropdownChange}>
                   <option>Select Gender</option>
-                  <option value="1">Male</option>
-                  <option value="2">Female</option>
-                  <option value="3">IDk</option>
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                  <option value="2">IDk</option>
                 </select>
               </Form.Group>
           </div>
           <Button variant="success" type="submit" onClick={handleSubmit}>
-            Add Data
+            Register
           </Button>
         </form>
       </div>
