@@ -70,13 +70,38 @@ const UserSignup = () => {
     ].join('/');
   }
 
+  var pad = function(num) { return ('00'+num).slice(-2) };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     form.department = dept[parseInt(form.department)];
     form.designation = designation[parseInt(form.designation)];
     form.gender = gender[parseInt(form.gender)];
-    form.date_of_birth = dobDate.toLocaleDateString('en-GB');
-    form.date_of_joining = dojDate.toLocaleDateString('en-GB');
+    form.dob = new Date(dobDate)
+    var today = new Date();
+    form.dob = form.dob.getUTCFullYear()         + '-' +
+    pad(form.dob.getUTCMonth() + 1)  + '-' +
+    pad(form.dob.getUTCDate())       + 'T' +
+    pad(form.dob.getUTCHours())      + ':' +
+    pad(form.dob.getUTCMinutes())    + ':' +
+    pad(form.dob.getUTCSeconds())   + '.' +
+    (form.dob.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) + 'Z';
+    form.doj = new Date(dojDate)
+    
+    form.doj = form.doj.getUTCFullYear()         + '-' +
+    pad(form.doj.getUTCMonth() + 1)  + '-' +
+    pad(form.doj.getUTCDate())       + 'T' +
+    pad(today.getHours())      + ':' +
+    pad(today.getMinutes())    + ':' +
+    pad(today.getSeconds())   + '.' +
+    (today.getMilliseconds() / 1000).toFixed(3).slice(2, 5) + 'Z';
+    form.password = form.password.toString();
+    form.cpassword = form.cpassword.toString();
+
+    if(form.password !== form.cpassword) {
+      alert("Passwords do not match");
+      return;
+    }
 
     signup(form)
     console.log(form);
