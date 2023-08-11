@@ -5,7 +5,8 @@ import { Form, Button } from 'react-bootstrap'
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
+import axios from 'axios';
+import { signup } from '../../Service/User/API';
 
 const UserSignup = () => {
   const [dobDate, setdobDate] = useState(new Date());
@@ -13,10 +14,10 @@ const UserSignup = () => {
 
   const designation = ['Program Associate', 'Manager', 'CEO'];
   const dept = ['Finance', 'Technology', 'Sales'];
-  const gender = ['Male', 'Female', 'Other'];
+  const gender = ['M', 'F', 'Other'];
 
   const handleDobChange = (date) => {
-    console.log(date);
+    console.log(date.toDateString());
     setdobDate(date);
   };
 
@@ -26,13 +27,16 @@ const UserSignup = () => {
   };
 
   const [form, setForm] = useState({
-    empid: "",
-    empname: "",
-    dept: "",
+    
+    employee_id: "",
+    employee_name: "",
     designation: "",
-    dob: "",
-    doj: "",
+    department: "",
     gender: "",
+    date_of_birth: "",
+    date_of_joining: ""
+    
+    
   });
 
   const handleChange = (event) => {
@@ -47,19 +51,22 @@ const UserSignup = () => {
 
   const handleDropdownChange = (event) => {
     console.log(event.target.id + " " + event.target.value);
-    form[event.target.id] = event.target.value;
+  
     setForm({
       ...form,
+      [event.target.id] : event.target.value,
     });
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    form.dept = dept[parseInt(form.dept)];
+    form.department = dept[parseInt(form.department)];
     form.designation = designation[parseInt(form.designation)];
     form.gender = gender[parseInt(form.gender)];
-    form.dob = dobDate.toLocaleDateString('en-GB');
-    form.doj = dojDate.toLocaleDateString('en-GB');
+    form.date_of_birth = dobDate.toLocaleDateString('en-GB');
+    form.date_of_joining = dojDate.toLocaleDateString('en-GB');
+
+    signup(form)
     console.log(form);
   }
 
@@ -73,33 +80,33 @@ const UserSignup = () => {
         </div>
           <Form className={styles.formGroup}>
             <div className={styles.group1}>
-              <Form.Group controlId="empid">
+              <Form.Group controlId="employee_id">
                 <Form.Label>Employee ID:</Form.Label>
                 <Form.Control
                   autocomplete="off"
                   type="text"
                   placeholder="Employee ID"
                   name="Employee ID:"
-                  value={form.empid}
+                  value={form.employee_id}
                   onChange={handleChange}
                 />
               </Form.Group>
               <br />
-              <Form.Group controlId="empname">
+              <Form.Group controlId="employee_name">
                 <Form.Label>Employee Name:</Form.Label>
                 <Form.Control
                   autocomplete="off"
                   type="text"
                   placeholder="Employee Name"
                   name="Employee Name:"
-                  value={form.empname}
+                  value={form.employee_name}
                   onChange={handleChange}
                 />
               </Form.Group>
               <br />
-              <Form.Group controlId="dept" className={styles.dropdown}>
+              <Form.Group controlId="department" className={styles.dropdown}>
                 <Form.Label>Department:</Form.Label>
-                <select id="dept" aria-label="Department" value={form.dept} onChange={handleDropdownChange}>
+                <select id="department" aria-label="Department" value={form.department} onChange={handleDropdownChange}>
                   <option>Select Department</option>
                   <option value="0">Finance</option>
                   <option value="1">Technology</option>
@@ -119,12 +126,12 @@ const UserSignup = () => {
                 </select>
               </Form.Group>
               <br />
-              <Form.Group controlId="dob" className={styles.dropdown}>
+              <Form.Group controlId="date_of_birth" className={styles.dropdown}>
                 <Form.Label>Date of Birth:</Form.Label>
                 <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dobDate} onChange={handleDobChange} />
               </Form.Group>
               <br />
-              <Form.Group controlId="doj" className={styles.dropdown}>
+              <Form.Group controlId="date_of_joining" className={styles.dropdown}>
                 <Form.Label>Date of Joining:</Form.Label>
                 <DatePicker dateFormat="dd-MM-yyyy" wrapperClassName="datePicker" selected={dojDate} onChange={handleDojChange} />
               </Form.Group>

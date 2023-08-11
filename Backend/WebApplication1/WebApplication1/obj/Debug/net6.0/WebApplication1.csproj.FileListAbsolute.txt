@@ -259,3 +259,9 @@ C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\D
 C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.pdb
 C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\WebApplication1.genruntimeconfig.cache
 C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\obj\Debug\net6.0\ref\WebApplication1.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\System.Web.Http.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Project2\Loan-Management-System\Backend\WebApplication1\WebApplication1\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

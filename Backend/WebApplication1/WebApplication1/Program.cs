@@ -20,7 +20,12 @@ namespace WebApplication1
             //Dependency Injection DbContext Class
             builder.Services.AddDbContext<APIDbContext>(options =>
             options.UseSqlServer(@"server=WINDOWS-BVQNF6J;database=loan;trusted_connection=true;TrustServerCertificate=True;"));
-
+            builder.Services.AddCors(o => o.AddPolicy("CORS", builder =>
+            {
+                builder.AllowAnyHeader()
+                .AllowAnyOrigin()
+                .AllowAnyMethod();
+            }));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -36,7 +41,7 @@ namespace WebApplication1
 
 
             app.MapControllers();
-
+            app.UseCors("CORS");
             app.Run();
         }
     }
