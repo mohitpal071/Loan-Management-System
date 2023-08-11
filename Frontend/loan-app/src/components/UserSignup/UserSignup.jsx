@@ -103,7 +103,7 @@ const UserSignup = () => {
       return;
     }
 
-    signup(form)
+    signup(form);
     console.log(form);
   }
 
