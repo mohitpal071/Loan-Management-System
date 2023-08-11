@@ -11,7 +11,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import ApplyLoan from "./components/User/ApplyLoan";
 import AdminDashboard from "./components/Admin/Dashboard/AdminDashboard";
 import AddUser from "./components/Admin/AddUser/AddUser";
-
+import UserSignup from "./components/UserSignup/UserSignup";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -21,6 +21,7 @@ root.render(
         <Route path="/" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/applyloan" element={<ApplyLoan />} />
+        <Route path="/signup" element={<UserSignup />} />
 
 
         <Route path="/admin/login" element={<AdminLogin />} />
