@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import api from './Services/User/API';
 
+const api= axios.create({baseURL: ''})
 function App() {
   return (
     <div className="App">

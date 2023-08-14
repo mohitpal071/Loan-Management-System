@@ -61,6 +61,14 @@ namespace WebApplication1.Migrations
                     b.Property<string>("employee_id")
                         .HasColumnType("varchar(6)");
 
+                    b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<DateTime>("date_of_birth")
                         .HasColumnType("Date");
 
@@ -82,6 +90,10 @@ namespace WebApplication1.Migrations
                     b.Property<string>("gender")
                         .IsRequired()
                         .HasColumnType("varchar(1)");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
 
                     b.HasKey("employee_id");
 

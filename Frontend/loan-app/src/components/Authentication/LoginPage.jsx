@@ -2,30 +2,39 @@ import React from "react";
 import styles from "./LoginPage.module.css";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react"
+import { login } from '../../Services/User/login';
 
 const LoginPage = () => {
   const [form, setForm] = useState({
-    username: "",
+    id: "",
     password: ""
   });
 
   const handleChange = (event) => {
-    console.log(event.target.id);
+    console.log(event.target.id + " " + event.target.value);
     setForm({
       ...form,
       [event.target.id]: event.target.value,
     });
+    console.log(form)
   } 
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if(form.username === "admin" && form.password === "admin") {
-      window.location.href = "/admin/dashboard";
-    } else {
+    login(form).then((res)=>{
+    console.log(form)
+    if(res.success == true)
+    {
       window.location.href = "/dashboard";
     }
+    
+    else 
+    {
+     alert("invalid Credentials"); 
+    }
+    })
+    
     
   }
 
@@ -42,9 +51,9 @@ const LoginPage = () => {
           <h1>Welcome!</h1>
           <form>
           <Form className={styles.formGroup} >
-            <Form.Group controlId="username">
+            <Form.Group controlId="id">
               <Form.Label>Username:</Form.Label>
-              <Form.Control value={form.username} onChange={handleChange} autocomplete="off" type="text" placeholder="Enter username" name="username" />
+              <Form.Control value={form.id} onChange={handleChange} autocomplete="off" type="text" placeholder="Enter username" name="username" />
             </Form.Group>
             <Form.Group controlId="password">
               <Form.Label>Password:</Form.Label>

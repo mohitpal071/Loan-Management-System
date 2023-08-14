@@ -29,6 +29,17 @@ namespace WebApplication1.Model
         [Required]
         [Column(TypeName = "Date")]
         public DateTime date_of_birth { get;set; }
+
+        [Required]
+        [Column(TypeName = "Date")]
         public DateTime date_of_joining { get; set; }
+
+        [Required]
+
+        [Column(TypeName = "varchar(10)")]
+        public string password { get; set; }
+        public byte[] PasswordHash { get; set; } = new byte[32];
+
+        public byte[] PasswordSalt { get; set; } = new byte[32];
     }
 }

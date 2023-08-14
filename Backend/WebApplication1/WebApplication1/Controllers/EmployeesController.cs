@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth0.ManagementApi.Models.Rules;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Model;
+
 
 namespace loanApplication.Controllers
 {
@@ -133,5 +135,24 @@ namespace loanApplication.Controllers
         {
             return (_context.Employees?.Any(e => e.employee_id == id)).GetValueOrDefault();
         }
+
+        [HttpPost("login")]
+
+        public async Task<IActionResult> Login(Login request)
+        {
+            var employee = await _context.Employees.FirstOrDefaultAsync(u => u.employee_id == request.id);
+
+            if (employee == null)
+            {
+                throw new Exception("User not found.");
+            }
+            if (request.password != employee.password)
+            {
+                throw new Exception("Password and username do not match");
+            }
+            return new OkObjectResult(employee);
+        }
+
+        
     }
 }
